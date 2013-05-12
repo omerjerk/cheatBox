@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 
 import com.actionbarsherlock.view.Menu;
+import com.omerjerk.cheatbox.fragments.mainFragment;
 import com.slidingmenu.lib.SlidingMenu;
 import com.slidingmenu.lib.app.SlidingFragmentActivity;
 
@@ -25,7 +26,7 @@ public class MainActivity extends SlidingFragmentActivity {
 				if (savedInstanceState != null)
 					mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
 				if (mContent == null)
-					mContent = new ColorFragment(R.color.red);	
+					mContent = new mainFragment(R.color.red);	
 
 				// set the Above View
 				setContentView(R.layout.content_frame);

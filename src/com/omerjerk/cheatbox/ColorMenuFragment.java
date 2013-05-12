@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.omerjerk.cheatbox.fragments.mainFragment;
+
 public class ColorMenuFragment extends ListFragment {
 
 	@Override
@@ -30,7 +32,7 @@ public class ColorMenuFragment extends ListFragment {
 		Fragment newContent = null;
 		switch (position) {
 		case 0:
-			newContent = new ColorFragment(R.color.red);
+			newContent = new mainFragment(R.color.red);
 			break;
 		case 1:
 			newContent = new ColorFragment(R.color.green);
