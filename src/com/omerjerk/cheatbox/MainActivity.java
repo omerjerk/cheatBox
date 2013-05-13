@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 
 import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import com.omerjerk.cheatbox.fragments.mainFragment;
 import com.slidingmenu.lib.SlidingMenu;
 import com.slidingmenu.lib.app.SlidingFragmentActivity;
@@ -26,7 +27,7 @@ public class MainActivity extends SlidingFragmentActivity {
 				if (savedInstanceState != null)
 					mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
 				if (mContent == null)
-					mContent = new mainFragment(R.color.red);	
+					mContent = new mainFragment();	
 
 				// set the Above View
 				setContentView(R.layout.content_frame);
@@ -58,6 +59,16 @@ public class MainActivity extends SlidingFragmentActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getSupportMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			toggle();
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 	
 	public void switchContent(Fragment fragment) {

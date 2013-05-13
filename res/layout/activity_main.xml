@@ -1,15 +1,27 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="5dp"
-    tools:context=".MainActivity" >
+    android:layout_height="match_parent" >
+    <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
 
-    <TextView
-        android:id="@+id/textView2"
+    <ImageView
+        android:id="@+id/templeRunImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/templerun" />
+    
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_below="@id/templeRunImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
         android:layout_centerHorizontal="true"
         android:text="An app for all the cheats of the top games on Play Store."
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -25,3 +37,4 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
+</ScrollView>

@@ -32,7 +32,7 @@ public class ColorMenuFragment extends ListFragment {
 		Fragment newContent = null;
 		switch (position) {
 		case 0:
-			newContent = new mainFragment(R.color.red);
+			newContent = new mainFragment();
 			break;
 		case 1:
 			newContent = new ColorFragment(R.color.green);

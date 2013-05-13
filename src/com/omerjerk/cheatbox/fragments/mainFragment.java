@@ -7,11 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 
 public class mainFragment extends Fragment{
 	
-	public mainFragment(int colorRes) {
+	public mainFragment() {
 			setRetainInstance(true);
 	}
 
