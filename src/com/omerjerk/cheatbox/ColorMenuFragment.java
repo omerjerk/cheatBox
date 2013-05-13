@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.omerjerk.cheatbox.fragments.mainFragment;
+import com.omerjerk.cheatbox.fragments.templeRunFragment;
 
 public class ColorMenuFragment extends ListFragment {
 
@@ -21,7 +22,7 @@ public class ColorMenuFragment extends ListFragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		String[] colors = getResources().getStringArray(R.array.color_names);
+		String[] colors = getResources().getStringArray(R.array.slidingMenuOptions);
 		ArrayAdapter<String> colorAdapter = new ArrayAdapter<String>(getActivity(), 
 				android.R.layout.simple_list_item_1, android.R.id.text1, colors);
 		setListAdapter(colorAdapter);
@@ -35,7 +36,7 @@ public class ColorMenuFragment extends ListFragment {
 			newContent = new mainFragment();
 			break;
 		case 1:
-			newContent = new ColorFragment(R.color.green);
+			newContent = new templeRunFragment();
 			break;
 		case 2:
 			newContent = new ColorFragment(R.color.blue);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="color_names">
+    <string-array name="slidingMenuOptions">
         <item>Home</item>
         <item>Temple Run</item>
         <item>Temple Run 2</item>
