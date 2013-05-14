@@ -370,7 +370,9 @@ int layout slidingmenumain 0x7f03001f
 int layout temple_run 0x7f030020
 int menu activity_main 0x7f0d0000
 int menu activity_splash_screen 0x7f0d0001
-int raw gamedata 0x7f040000
+int raw android_settings 0x7f040000
+int raw gamedata 0x7f040001
+int raw stats 0x7f040002
 int string abs__action_bar_home_description 0x7f0a0000
 int string abs__action_bar_up_description 0x7f0a0001
 int string abs__action_menu_overflow_description 0x7f0a0002

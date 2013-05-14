@@ -1154,7 +1154,9 @@ containing a value of this type.
         public static final int activity_splash_screen=0x7f0d0001;
     }
     public static final class raw {
-        public static final int gamedata=0x7f040000;
+        public static final int android_settings=0x7f040000;
+        public static final int gamedata=0x7f040001;
+        public static final int stats=0x7f040002;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 

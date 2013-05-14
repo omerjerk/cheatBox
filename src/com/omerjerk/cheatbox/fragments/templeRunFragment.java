@@ -73,7 +73,7 @@ public class templeRunFragment extends Fragment {
 			         
 			         Toast.makeText(getActivity() , "Patched ...", Toast.LENGTH_SHORT).show();
 			    } catch(Exception e) {
-			    	Toast.makeText(getActivity() , "Shit Happened ! :(", Toast.LENGTH_SHORT).show();
+			    	Toast.makeText(getActivity() , "Shit Happened ! :(  \nAnd make sure your Temple Run is installed!", Toast.LENGTH_SHORT).show();
 			    }
 	    	}
 	    });
