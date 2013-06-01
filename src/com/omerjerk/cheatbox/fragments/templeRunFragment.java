@@ -30,7 +30,6 @@ public class templeRunFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	
 	    // construct the RelativeLayout
-	    v = new View(getActivity());
 	    v = inflater.inflate(R.layout.temple_run, null);	 
 	    
 	    Button patchButton2 = (Button) v.findViewById(R.id.patchButton2);

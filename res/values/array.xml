@@ -2,8 +2,8 @@
 <resources>
     <string-array name="slidingMenuOptions">
         <item>Home</item>
-        <item>Temple Run</item>
         <item>Temple Run 2</item>
+        <item>Temple Run</item>
         <item>Temple Run Oz</item>
         <item>Subway Surfer</item>
     </string-array>
