@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.omerjerk.cheatbox.fragments.mainFragment;
 import com.omerjerk.cheatbox.fragments.templeRunFragment;
+import com.omerjerk.cheatbox.fragments.templeRunOzFragment;
 
 public class ColorMenuFragment extends ListFragment {
 
@@ -42,7 +43,7 @@ public class ColorMenuFragment extends ListFragment {
 			newContent = new ColorFragment(R.color.blue);
 			break;
 		case 3:
-			newContent = new ColorFragment(android.R.color.white);
+			newContent = new templeRunOzFragment();
 			break;
 		case 4:
 			newContent = new ColorFragment(android.R.color.black);

@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
@@ -29,19 +30,18 @@ public class templeRunOzFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	
 	    // construct the RelativeLayout
-	    v = new View(getActivity());
-	    v = inflater.inflate(R.layout.temple_run, null);	 
+	    v = inflater.inflate(R.layout.temple_run_oz, null);	 
 	    
-	    Button patchButton = (Button) v.findViewById(R.id.patchButton);
-	    
-	    patchButton.setOnClickListener(new Button.OnClickListener(){
+	    Button patchButtonOz = (Button) v.findViewById(R.id.patchButtonOz);
+	    System.out.println("inside oncreate view");
+	    patchButtonOz.setOnClickListener(new OnClickListener(){
 	    	@Override
 	    	public void onClick (View v){
 	    		File sdcard = Environment.getExternalStorageDirectory();
 				File sourceOrig1 = new File(sdcard,"/Android/data/com.disney.TempleRunOz.goo/files/android_settings.oz");
 				File sourceOrig2 = new File(sdcard,"/Android/data/com.disney.TempleRunOz.goo/files/stats.sav");
 				
-				
+				System.out.println("inside onclicklistener");
 				File backupFolder = new File(sdcard, "/Android/data/com.imangi.templerun2/files/backup");
 				
 				
@@ -49,8 +49,8 @@ public class templeRunOzFragment extends Fragment {
 					backupFolder.mkdirs();
 				}
 				
-				File backupFile1 = new File (backupFolder, "/gamedata.txt");
-				File backupFile2 = new File (backupFolder, "/gamedata.txt");
+				File backupFile1 = new File (backupFolder, "/android_settings.oz");
+				File backupFile2 = new File (backupFolder, "/stats.sav");
 				
 				
 			    byte[] buff1 = new byte[1024];

@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
@@ -32,14 +33,14 @@ public class templeRunFragment extends Fragment {
 	    v = new View(getActivity());
 	    v = inflater.inflate(R.layout.temple_run, null);	 
 	    
-	    Button patchButton = (Button) v.findViewById(R.id.patchButton);
-	    
-	    patchButton.setOnClickListener(new Button.OnClickListener(){
+	    Button patchButton2 = (Button) v.findViewById(R.id.patchButton2);
+	    System.out.println("inside oncreate view");
+	    patchButton2.setOnClickListener(new OnClickListener(){
 	    	@Override
 	    	public void onClick (View v){
 	    		File sdcard = Environment.getExternalStorageDirectory();
 				File sourceOrig = new File(sdcard,"/Android/data/com.imangi.templerun2/files/gamedata.txt");
-				
+				System.out.println("inside onclick listener");
 				
 				File backupFolder = new File(sdcard, "/Android/data/com.imangi.templerun2/files/backup");
 				
@@ -73,6 +74,7 @@ public class templeRunFragment extends Fragment {
 			         
 			         Toast.makeText(getActivity() , "Patched ...", Toast.LENGTH_SHORT).show();
 			    } catch(Exception e) {
+			    	System.out.println(e);
 			    	Toast.makeText(getActivity() , "Shit Happened ! :(  \nAnd make sure your Temple Run is installed!", Toast.LENGTH_SHORT).show();
 			    }
 	    	}
