@@ -22,14 +22,14 @@ public class copy extends Activity{
 	}
 	
 	public boolean task(){
-		File sourceOrg = new File(new File(sdcard, input),"filename");
+		File sourceOrg = new File(new File(sdcard, input), filename);
 		File backupFolder = new File( new File(sdcard, input), "/backup");
 		
 		if(!backupFolder.exists()){
 			backupFolder.mkdirs();
 		}
 		
-		File backupFile = new File (backupFolder, "filename");
+		File backupFile = new File (backupFolder, filename);
 		
 		byte[] buff = new byte[1024];
 	    int read = 0;
