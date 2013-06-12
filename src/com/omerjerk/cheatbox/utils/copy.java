@@ -17,9 +17,11 @@ public class copy extends Activity{
 	File sdcard = Environment.getExternalStorageDirectory();
 	
 	String input, filename;
-	public copy(String in, String fname){
+	int tempHack;
+	public copy(String in, String fname, int thack){
 		this.input =in; 
 		this.filename = fname;
+		this.tempHack = thack;
 	}
 	
 	public boolean task(){
@@ -43,8 +45,27 @@ public class copy extends Activity{
 	    	while ((read = inOrig.read(buff)) > 0) {
 		          outOrig.write(buff, 0, read);
 		       }
-	       InputStream inRaw = getResources().openRawResource(R.raw.gamedata);
-	       FileOutputStream outPatched = new FileOutputStream(Environment.getExternalStorageDirectory().getPath() + "/Android/data/com.imangi.templerun2/files/gamedata.txt");
+	    	InputStream inRaw = null;
+	    	FileOutputStream outPatched = null;
+	    	switch (tempHack){
+	    	case 1:
+	    		inRaw = getResources().openRawResource(R.raw.gamedata);
+	    		outPatched = new FileOutputStream(Environment.getExternalStorageDirectory().getPath() + "/Android/data/com.imangi.templerun2/files/gamedata.txt"); 
+	    		break;
+	    	case 2:
+	    		inRaw = getResources().openRawResource(R.raw.android_settings);
+	    		outPatched = new FileOutputStream(Environment.getExternalStorageDirectory().getPath() + "/Android/data/com.disney.TempleRunOz.goo/files/android_settings.oz"); 
+	    		break;
+	    	case 3:
+	    		inRaw = getResources().openRawResource(R.raw.stats);
+	    		outPatched = new FileOutputStream(Environment.getExternalStorageDirectory().getPath() + "/Android/data/com.disney.TempleRunOz.goo/files/stats.sav"); 
+	    		break;
+	    	case 4:
+	    		inRaw = getResources().openRawResource(R.raw.recordmanager);
+	    		outPatched = new FileOutputStream(Environment.getExternalStorageDirectory().getPath() + "/Android/data/com.imangi.templerun/files/recordmanager.dat"); 
+	    		break;
+	    	}
+	       
 	       while ((read = inRaw.read(buff)) > 0) {
 	          outPatched.write(buff, 0, read);
 	       }

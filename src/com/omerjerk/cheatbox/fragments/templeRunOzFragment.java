@@ -17,7 +17,6 @@ public class templeRunOzFragment extends Fragment {
 	public templeRunOzFragment() {
 		setRetainInstance(true);
 		}
-
 	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,7 +37,5 @@ public class templeRunOzFragment extends Fragment {
 				}
 	    });
 	    return v;
-        }
-    
-    
+     }    
 }

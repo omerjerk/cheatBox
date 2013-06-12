@@ -34,21 +34,21 @@ public class advanceCheatsDialog extends DialogFragment {
 	 private void patchTask(int i){
 		 switch(i){
 		 case 1:
-			 copy cp = new copy("/Android/data/com.imangi.templerun2/files", "gamedata.txt");
+			 copy cp = new copy("/Android/data/com.imangi.templerun2/files", "gamedata.txt", 1);
 	    	 boolean result = cp.task();
 	    	 	if (result == true){
 	    			Toast.makeText(getActivity(), "Patched ...   :D", Toast.LENGTH_SHORT).show();
 	    		} else {
 	    			Toast.makeText(getActivity(), "Shit Happened!\nMake sure your temple run is installed.", Toast.LENGTH_SHORT).show();
-	    		};
+	    		} break;
 		 case 2:
-			 copy cp1 = new copy("/Android/data/com.disney.TempleRunOz.goo/files", "android_settings.oz");
+			 copy cp1 = new copy("/Android/data/com.disney.TempleRunOz.goo/files", "android_settings.oz", 2);
 			 boolean result1 = cp1.task();
-			 copy cp2 = new copy("/Android/data/com.disney.TempleRunOz.goo/files", "stats.sav");
+			 copy cp2 = new copy("/Android/data/com.disney.TempleRunOz.goo/files", "stats.sav", 3);
 			 boolean result2 = cp2.task();
 			 if(result1 == false || result2 == false){
 			 	Toast.makeText(getActivity(), "Shit Happened!\nMake sure your Temple Run Oz is installed.", Toast.LENGTH_SHORT).show();
-			 }
+			 } break;
 		 }
 	 }
 }

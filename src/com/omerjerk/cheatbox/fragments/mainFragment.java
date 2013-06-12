@@ -21,7 +21,5 @@ public class mainFragment extends Fragment{
 		View v = new View(getActivity());
 		v = inflater.inflate(R.layout.activity_main, null);		
 		return v;
-	}
-
-	
+	}	
 }
