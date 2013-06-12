@@ -40,13 +40,13 @@ public class ColorMenuFragment extends ListFragment {
 			newContent = new templeRunFragment();
 			break;
 		case 2:
-			newContent = new ColorFragment();
+			newContent = new DefaultFragment();
 			break;
 		case 3:
 			newContent = new templeRunOzFragment();
 			break;
 		case 4:
-			newContent = new ColorFragment();
+			newContent = new DefaultFragment();
 			break;
 		}
 		if (newContent != null)

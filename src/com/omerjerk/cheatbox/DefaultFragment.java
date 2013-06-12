@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ColorFragment extends Fragment {
+public class DefaultFragment extends Fragment {
 
-	View v;
+	View v; 
 
 
-	public ColorFragment() {
+	public DefaultFragment() {
 		setRetainInstance(true);
 	}
 

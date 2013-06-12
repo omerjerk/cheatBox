@@ -7,10 +7,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.omerjerk.cheatbox.R;
-import com.omerjerk.cheatbox.utils.copy;
+import com.omerjerk.cheatbox.utils.advanceCheatsDialog;
 
 public class templeRunOzFragment extends Fragment {
 	View v ;
@@ -31,14 +30,12 @@ public class templeRunOzFragment extends Fragment {
 	    patchButtonOz.setOnClickListener(new OnClickListener(){
 	    	@Override
 	    	public void onClick (View v){
-				copy cp1 = new copy("/Android/data/com.disney.TempleRunOz.goo/files", "android_settings.oz");
-				boolean result1 = cp1.task();
-				copy cp2 = new copy("/Android/data/com.disney.TempleRunOz.goo/files", "stats.sav");
-				boolean result2 = cp2.task();
-				if(result1 == false || result2 == false){
-					Toast.makeText(getActivity(), "Shit Happened!\nMake sure your Temple Run Oz is installed.", Toast.LENGTH_SHORT).show();
+	    		advanceCheatsDialog dialog = new advanceCheatsDialog();
+	    		Bundle args = new Bundle();
+	    		args.putInt("GAME_ID", 2);
+	    		dialog.setArguments(args);
+	    		dialog.show(getFragmentManager(), getTag());
 				}
-	    	}
 	    });
 	    return v;
         }
