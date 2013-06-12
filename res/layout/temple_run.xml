@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:padding="6dp" > 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
+        
+        <TextView 
+            android:id="@+id/templeRun2Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Temple Run 2" />
 
         <TextView
             android:id="@+id/templeRunDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_below="@id/templeRun2Header"
+            android:layout_marginTop="5dp"
             android:layout_centerHorizontal="true"
-            android:text="Cheats related to Temple Run"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:text="@string/templeRun2Desc"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <Button
             android:id="@+id/patchButton2"
@@ -23,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/templeRunDesc"
             android:layout_marginTop="10dp"
-            android:text="Patch" />
+            android:text="Advance Cheats" />
         
     </RelativeLayout>
 </ScrollView>

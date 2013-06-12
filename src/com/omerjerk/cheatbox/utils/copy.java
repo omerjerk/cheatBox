@@ -3,6 +3,7 @@ package com.omerjerk.cheatbox.utils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -22,14 +23,14 @@ public class copy extends Activity{
 	}
 	
 	public boolean task(){
-		File sourceOrg = new File(new File(sdcard, input), filename);
+		File sourceOrg = new File(new File(sdcard, input), "/" + filename);
 		File backupFolder = new File( new File(sdcard, input), "/backup");
 		
 		if(!backupFolder.exists()){
 			backupFolder.mkdirs();
 		}
 		
-		File backupFile = new File (backupFolder, filename);
+		File backupFile = new File (backupFolder, "/" + filename);
 		
 		byte[] buff = new byte[1024];
 	    int read = 0;
@@ -53,7 +54,7 @@ public class copy extends Activity{
 	       inRaw.close();
 	       outPatched.close();
 	       return true;
-	    } catch (Exception e){
+	    } catch (IOException e){
 	        return false;
 	    }
 	}

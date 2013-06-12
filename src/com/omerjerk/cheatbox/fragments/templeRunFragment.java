@@ -7,10 +7,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.omerjerk.cheatbox.R;
-import com.omerjerk.cheatbox.utils.copy;
+import com.omerjerk.cheatbox.utils.advanceCheatsDialog;
 
 public class templeRunFragment extends Fragment {
 	View v ;
@@ -31,11 +30,11 @@ public class templeRunFragment extends Fragment {
 	    patchButton2.setOnClickListener(new OnClickListener(){
 	    	@Override
 	    	public void onClick (View v){
-	    		copy cp = new copy("/Android/data/com.imangi.templerun2/files", "gamedata.txt");
-	    		boolean result = cp.task();
-	    		if (result == false){
-	    			Toast.makeText(getActivity(), "Shit Happened!\nMake sure your temple run is installed.", Toast.LENGTH_SHORT).show();
-	    		}
+	    		advanceCheatsDialog dialog = new advanceCheatsDialog();
+	    		Bundle args = new Bundle();
+	    		args.putInt("GAME_ID", 1);
+	    		dialog.setArguments(args);
+	    		dialog.show(getFragmentManager(), getTag());
 	    	}
 	    });
 	    return v;
