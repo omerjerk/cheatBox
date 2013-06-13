@@ -24,10 +24,9 @@ View v ;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	
 	    // construct the RelativeLayout
-	    v = inflater.inflate(R.layout.temple_run, null);	 
+	    v = inflater.inflate(R.layout.temple_run_1, null);	 
 	    
 	    Button patchButton2 = (Button) v.findViewById(R.id.patchButton2);
-	    System.out.println("inside oncreate view");
 	    patchButton2.setOnClickListener(new OnClickListener(){
 	    	@Override
 	    	public void onClick (View v){

@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.omerjerk.cheatbox.fragments.mainFragment;
+import com.omerjerk.cheatbox.fragments.templeRun1Fragment;
 import com.omerjerk.cheatbox.fragments.templeRunFragment;
 import com.omerjerk.cheatbox.fragments.templeRunOzFragment;
 
@@ -40,7 +41,7 @@ public class ColorMenuFragment extends ListFragment {
 			newContent = new templeRunFragment();
 			break;
 		case 2:
-			newContent = new DefaultFragment();
+			newContent = new templeRun1Fragment();
 			break;
 		case 3:
 			newContent = new templeRunOzFragment();

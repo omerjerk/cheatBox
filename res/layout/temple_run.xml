@@ -33,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/templeRunDesc"
             android:layout_marginTop="10dp"
-            android:text="Advance Cheats" />
+            android:text="@string/cheat_advance" />
         
     </RelativeLayout>
 </ScrollView>
