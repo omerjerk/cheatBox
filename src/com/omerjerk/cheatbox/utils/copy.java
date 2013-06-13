@@ -42,11 +42,15 @@ public class copy{
 	    InputStream inOrig = null;
 	    OutputStream outOrig = null;
 	    try {
-	    	inOrig = new FileInputStream(sourceOrg);
-	    	outOrig = new FileOutputStream(backupFile);
-	    	while ((read = inOrig.read(buff)) > 0) {
-		          outOrig.write(buff, 0, read);
-		       }
+	    	if(tempHack != 5){
+	    		inOrig = new FileInputStream(sourceOrg);
+		    	outOrig = new FileOutputStream(backupFile);
+		    	while ((read = inOrig.read(buff)) > 0) {
+			          outOrig.write(buff, 0, read);
+			    }
+		    	inOrig.close();
+			    outOrig.close();
+	    	}	    	
 	    	InputStream inRaw = null;
 	    	FileOutputStream outPatched = null;
 	    	switch (tempHack){
@@ -68,7 +72,7 @@ public class copy{
 	    		break;
 	    	case 5:
 	    		inRaw = new FileInputStream(new File(new File(sdcard, input),"/backup/" + filename));
-	    		outPatched = new FileOutputStream(new File(sdcard, input).getPath() + "/" + filename);
+	    		outPatched = new FileOutputStream(new File(sdcard, input) + "/" + filename);
 	    		break;
 	    	}
 	       
@@ -76,8 +80,7 @@ public class copy{
 	          outPatched.write(buff, 0, read);
 	       }
 	       
-	       inOrig.close();
-	       outOrig.close();
+	       
 	       inRaw.close();
 	       outPatched.close();
 	       return true;

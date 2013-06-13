@@ -46,7 +46,6 @@ public class advanceCheatsDialog extends DialogFragment {
 	            	public void onClick(DialogInterface dialog, int id){
 	            		if(patched == true){
 	            			restoreTask(gameID);
-	            			patchTask(gameID);
 	                		SharedPreferences.Editor editor = settings.edit();
 	                	    editor.putBoolean("Restore", false);
 	                	    editor.commit();
@@ -87,19 +86,23 @@ public class advanceCheatsDialog extends DialogFragment {
 	 private void restoreTask(int i){
 		 switch(i){
 		 case 1:
-			 cp = new copy("/Android/data/com.imangi.templerun2/files/backup", "gamedata.txt", 5, c);
+			 cp = new copy("/Android/data/com.imangi.templerun2/files", "gamedata.txt", 5, c);
 			 result = cp.task();
 			 if(result == false){
 				 unableToRestore();
+			 } else {
+				 restoreSuccessful();
 			 }
 			 break;
 		 case 2:
-			 cp = new copy("/Android/data/com.disney.TempleRunOz.goo/files/backup", "android_settings.oz", 5, c);
+			 cp = new copy("/Android/data/com.disney.TempleRunOz.goo/files", "android_settings.oz", 5, c);
 			 result = cp.task();
-			 copy cp1 = new copy("/Android/data/com.disney.TempleRunOz.goo/files/backup", "stats.sav", 5, c);
+			 copy cp1 = new copy("/Android/data/com.disney.TempleRunOz.goo/files", "stats.sav", 5, c);
 			 boolean result1 = cp1.task();
 			 if(result == false || result1 == false){
 				 unableToRestore();
+			 } else {
+				 restoreSuccessful();
 			 }
 			 break;
 		 case 3:
@@ -107,11 +110,18 @@ public class advanceCheatsDialog extends DialogFragment {
 			 result = cp.task();
 			 if(result == false){
 				 unableToRestore();
+			 } else {
+				 restoreSuccessful();
 			 }
+			 break;
 		 }
 	 }
 	 
 	 private void unableToRestore(){
 		 Toast.makeText(c, "Unable to restore.", Toast.LENGTH_SHORT).show();
+	 }
+	 
+	 private void restoreSuccessful(){
+		 Toast.makeText(c, "Restore Successful.", Toast.LENGTH_SHORT).show();
 	 }
 }
