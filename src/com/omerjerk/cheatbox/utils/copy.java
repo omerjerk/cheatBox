@@ -66,6 +66,10 @@ public class copy{
 	    		inRaw = context.getResources().openRawResource(R.raw.recordmanager);
 	    		outPatched = new FileOutputStream(Environment.getExternalStorageDirectory().getPath() + "/Android/data/com.imangi.templerun/files/recordmanager.dat"); 
 	    		break;
+	    	case 5:
+	    		inRaw = new FileInputStream(new File(new File(sdcard, input),"/backup/" + filename));
+	    		outPatched = new FileOutputStream(new File(sdcard, input).getPath() + "/" + filename);
+	    		break;
 	    	}
 	       
 	       while ((read = inRaw.read(buff)) > 0) {
