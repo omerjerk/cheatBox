@@ -22,13 +22,16 @@ public class advanceCheatsDialog extends DialogFragment {
 	     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 	     c = getActivity(); // Context object to use at various places
 	     settings = c.getSharedPreferences("SETTINGS_MAIN", 0);
-	     final Boolean mainRun = settings.getBoolean("MAIN_RUN", false);
+	     final Boolean patched = settings.getBoolean("PATCHED", false);
 	     builder.setMessage("Advance Patching")
 	            .setPositiveButton("Patch", new DialogInterface.OnClickListener() {
 	                public void onClick(DialogInterface dialog, int id) {
 	                    // PATCH ZE GAME
-	                	if(mainRun == false){
+	                	if(patched == false){
 	                		patchTask(gameID);
+	                		SharedPreferences.Editor editor = settings.edit();
+	                	    editor.putBoolean("PATCHED", true);
+	                	    editor.commit();
 	                	} else {
 	                		Toast.makeText(c, "Your game is already patched. Please restore before patching again.", Toast.LENGTH_SHORT).show();
 	                	}
@@ -41,12 +44,16 @@ public class advanceCheatsDialog extends DialogFragment {
 	            })
 	            .setNeutralButton("Restore", new DialogInterface.OnClickListener(){
 	            	public void onClick(DialogInterface dialog, int id){
-	            		if(mainRun == true){
+	            		if(patched == true){
 	            			restoreTask(gameID);
+	            			patchTask(gameID);
+	                		SharedPreferences.Editor editor = settings.edit();
+	                	    editor.putBoolean("Restore", false);
+	                	    editor.commit();
 	            		} else {
 	            			Toast.makeText(c, "Please patch atleast once.", Toast.LENGTH_LONG).show();
 	            		}
-	            	}	            	
+	            	}
 	            });
 	     // Create the AlertDialog object and return it
 	     return builder.create();
