@@ -13,10 +13,10 @@ public class advanceCheatsDialog extends DialogFragment {
 	
 	 Context c;
 	 SharedPreferences settings;
-	 final Boolean patched_templeRun2 = settings.getBoolean("PATCHED_TMEPLERUN2", false);
-	 final Boolean patched_templeRun1 = settings.getBoolean("PATCHED_TMEPLERUN1", false);
-	 final Boolean patched_templeRunOz = settings.getBoolean("PATCHED_TMEPLERUNOZ", false);
-	 SharedPreferences.Editor editor = settings.edit();
+	 Boolean patched_templeRun2;
+	 Boolean patched_templeRun1;
+	 Boolean patched_templeRunOz;
+	 SharedPreferences.Editor editor;
 	 @Override
 	 public Dialog onCreateDialog(Bundle savedInstanceState) {
 		 //Extracting the arguments
@@ -25,15 +25,18 @@ public class advanceCheatsDialog extends DialogFragment {
 	     // Use the Builder class for convenient dialog construction
 	     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 	     c = getActivity(); // Context object to use at various places
-	     settings = c.getSharedPreferences("SETTINGS_MAIN", 0);
 	     
+	     //Assigning values to these fields for later use
+	     settings = c.getSharedPreferences("SETTINGS_MAIN", 0);
+	     patched_templeRun2 = settings.getBoolean("PATCHED_TMEPLERUN2", false);
+	     patched_templeRun1 = settings.getBoolean("PATCHED_TMEPLERUN1", false);
+	     patched_templeRunOz = settings.getBoolean("PATCHED_TMEPLERUNOZ", false);
+	     editor = settings.edit();
 	     builder.setMessage("Advance Patching")
 	            .setPositiveButton("Patch", new DialogInterface.OnClickListener() {
 	                public void onClick(DialogInterface dialog, int id) {
 	                    // PATCH ZE GAME
 	                	patchTask(gameID);
-	                	
-	                	
 	                }
 	            })
 	            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -44,9 +47,6 @@ public class advanceCheatsDialog extends DialogFragment {
 	            .setNeutralButton("Restore", new DialogInterface.OnClickListener(){
 	            	public void onClick(DialogInterface dialog, int id){
 	            		restoreTask(gameID);
-	                	SharedPreferences.Editor editor = settings.edit();
-	                	editor.putBoolean("Restore", false);
-	                	editor.commit();
 	            	}
 	            });
 	     // Create the AlertDialog object and return it
