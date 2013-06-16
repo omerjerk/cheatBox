@@ -43,8 +43,6 @@ public class MainActivity extends SlidingFragmentActivity {
 				.replace(R.id.menu_frame, new ColorMenuFragment())
 				.commit();
 		
-		
-		
 				SlidingMenu sm = getSlidingMenu();
 				sm.setShadowWidthRes(R.dimen.shadow_width);
 				sm.setShadowDrawable(R.drawable.shadow);
@@ -67,6 +65,10 @@ public class MainActivity extends SlidingFragmentActivity {
 		switch (item.getItemId()) {
 		case android.R.id.home:
 			toggle();
+			return true;
+		case R.id.menu_settings:
+			aboutDialog aboutD = new aboutDialog();
+			aboutD.show(getSupportFragmentManager(), "ABOUT_DIALOG");
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

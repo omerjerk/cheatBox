@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/stitch" >
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +31,8 @@
             android:layout_marginTop="5dp"
             android:layout_centerHorizontal="true"
             android:text="The easiest way to earn a high score is really a matter of comfort and helping your hand survive a record-setting run. You will absolutely cramp up if you don't hold your phone properly. With all the tilt control needed to navigate Temple Run's twisting platforms, hold your phone improperly will inhibit you from making it through a long run."
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/red" />
 
         <Button
             android:id="@+id/patchButton"

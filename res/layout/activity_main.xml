@@ -1,7 +1,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/stitch" >
     <RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -23,6 +24,7 @@
         android:layout_marginTop="7dp"
         android:layout_centerHorizontal="true"
         android:text="An app for all the cheats of the top games on Play Store."
+        android:textColor="@color/red"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -33,6 +35,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:text="Just swipe the screen to right!!"
+        android:textColor="@color/red"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
